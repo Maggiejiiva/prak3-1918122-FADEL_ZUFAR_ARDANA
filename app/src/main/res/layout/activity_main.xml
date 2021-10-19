@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
 
-            android:background="@color/design_default_color_primary"
+            android:background="#D1C4E9"
             android:elevation="4dp"
 
             android:theme="@style/ThemeOverlay.AppCompat.DayNight"

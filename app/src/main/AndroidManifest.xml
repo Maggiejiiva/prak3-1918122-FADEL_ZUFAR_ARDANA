@@ -11,8 +11,8 @@
         android:theme="@style/Theme.Pertemuan3">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
