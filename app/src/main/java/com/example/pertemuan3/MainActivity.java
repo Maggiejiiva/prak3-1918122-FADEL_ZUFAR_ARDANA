@@ -7,11 +7,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.MediaController;
-import android.widget.VideoView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -40,28 +37,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(savedInstanceState == null){
 
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new ProfileFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_profile);
-        }
+                    new MessageFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_message);}
     }
     //drawer menu fragment handler
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
+            case R.id.nav_message:
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new MessageFragment()).commit();
+                break;
+            case R.id.nav_chat:
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new ChatFragment()).commit();
+                break;
             case R.id.nav_profile:
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ProfileFragment()).commit();
-                break;
-            case R.id.nav_photo:
-
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new PhotoFragment()).commit();
-                break;
-            case R.id.nav_video:
-
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new VideoFragment()).commit();
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);
